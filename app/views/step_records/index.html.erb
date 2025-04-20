@@ -1,0 +1,24 @@
+<h1>歩数グラフ</h1>
+<hr>
+<%= button_to 'ログアウト', logout_path, method: :delete %>
+<hr>
+<h2><%= current_user.email %>のデータ</h2>
+<%= line_chart @step_data, xtitle: "日付", ytitle: "歩数" %>
+
+<h2 class="mt-4">日別データ</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>歩数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @step_records.each do |record| %>
+      <tr>
+        <td><%= record.date.strftime('%Y/%m/%d') %></td>
+        <td><%= record.steps %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

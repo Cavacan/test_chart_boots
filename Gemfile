@@ -67,3 +67,7 @@ group :test do
 end
 
 gem "sorcery"
+
+gem 'chartkick'
+
+gem 'groupdate'
