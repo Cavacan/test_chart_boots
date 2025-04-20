@@ -3,7 +3,17 @@
 <%= button_to 'ログアウト', logout_path, method: :delete %>
 <hr>
 <h2><%= current_user.email %>のデータ</h2>
-<%= line_chart @step_data, xtitle: "日付", ytitle: "歩数" %>
+
+<%= form_with url: step_records_path, method: :get, local: true, class: "mb-3" do %>
+  <div class="form-group">
+    <label for="interval">表示単位：</label>
+    <%= select_tag :interval,
+      options_for_select([['日別', 'day'], ['週別', 'week'], ['月別', "month"]], selected: @interval),
+      class: "form-select", onchange: "this.form.submit();" %>
+  </div>
+<% end %>
+
+<%= line_chart @chart_data, xtitle: "日付", ytitle: "歩数" %>
 
 <h2 class="mt-4">日別データ</h2>
 <table class="table">
