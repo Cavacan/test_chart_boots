@@ -1,0 +1,31 @@
+
+<h1 class="mb-4">歩数データ編集</h1>
+
+<div class="mb-3">
+  <h2><%= link_to '編集中止', step_records_path, class: "btn btn-outline-danger btn-lm" %></h2>
+</div>
+
+<hr>
+
+<table style="width: 500px;" class="table table-striped table-hover align-middle table-edit">
+  <thead class="table-light">
+    <tr>
+      <th style="width: 150px;">日付</th>
+      <th style="width: 150px;">歩数</th>
+      <th class="text-end" style="width: 120px;">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @step_records.each do |record| %>
+      <%= form_with model: record, url: step_record_path(record), method: :patch, local: true do |f| %>
+        <tr>
+          <td><%= f.date_field :date, class: "form-control" %></td>
+          <td><%= f.number_field :steps, class: "form-control", min: 0 %></td>
+          <td class="text-end">
+            <%= f.submit "更新", class: "btn btn-success btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

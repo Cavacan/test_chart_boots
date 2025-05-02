@@ -1,8 +1,10 @@
-<h1>歩数グラフ</h1>
-<hr>
-<%= button_to 'ログアウト', logout_path, method: :delete %>
-<hr>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1>歩数グラフ</h1>
+  <%= button_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-dark', form: { class: 'd-inline' }  %>
+</div>
 <h2><%= current_user.email %>のデータ</h2>
+
+<br>
 
 <%= form_with url: step_records_path, method: :get, local: true, class: "mb-3" do %>
   <div class="form-group">
@@ -15,7 +17,12 @@
 
 <%= line_chart @chart_data, xtitle: "日付", ytitle: "歩数" %>
 
+<%= render partial: "form", locals: { step_record: @new_step_record } %>
+<br>
+
+
 <h2 class="mt-4">日別データ</h2>
+<%= link_to 'データ編集', edit_step_records_path, class: 'btn btn-secondary' %>
 <table class="table">
   <thead>
     <tr>

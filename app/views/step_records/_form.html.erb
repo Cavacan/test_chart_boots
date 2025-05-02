@@ -1,0 +1,14 @@
+<h2>新規データ登録</h2>
+<%= form_with model: step_record, local: true, class: "needs-validation" do |f| %>
+  <div class="mb-3">
+    <%= f.label :date, "日付", class: "form-label" %>
+    <%= f.date_field :date, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :steps, "歩数", class: "form-label" %>
+    <%= f.number_field :steps, class: "form-control", required: true %>
+  </div>
+
+  <%= f.submit "記録する", class: "btn btn-primary" %>
+<% end %>

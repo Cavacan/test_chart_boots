@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  resources :step_records, only: [:index]
+  resources :step_records, only: [:index, :new, :create, :update] do
+    collection do
+      get :edit
+    end
+  end
 end
