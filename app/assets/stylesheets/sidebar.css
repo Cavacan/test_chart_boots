@@ -1,0 +1,22 @@
+.sidebar-fixed {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f8f9fa;
+  border-left: 1px solid #ccc;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.main-content {
+  margin-right: 300px;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.nav-link{
+  border
+}

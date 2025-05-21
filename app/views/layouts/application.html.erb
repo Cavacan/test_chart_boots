@@ -12,7 +12,18 @@
   </head>
 
   <body>
-    <%= render 'shared/information' %>
-    <%= yield %>
+    <%  if logged_in? %>
+      <div class="main-content">
+        <%= render 'shared/information' %>
+        <%= yield %>
+      </div>
+
+      <div class="sidebar-fixed">
+        <%= render 'shared/sidebar' %>
+      </div>
+    <% else %>
+      <%= render 'shared/information' %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

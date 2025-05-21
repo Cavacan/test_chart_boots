@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'page2' => 'page2#index'
+  get 'config' => 'config#show'
   root 'sessions#new'
 
   get '/login' => 'sessions#new'
