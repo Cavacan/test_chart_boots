@@ -1,0 +1,30 @@
+.nav-link {
+  background-color: #e9f5ff;
+}
+
+li.nav-item{
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+li.nav-item .nav-link  {
+  background-color: rgb(219, 219, 219);
+}
+
+li.nav-item .nav-link.active  {
+  background-color: #adfd94;
+}
+
+.main-content{
+  background-color: #f6fff3;
+}
+.sidebar-fixed{
+  background-color: #fcf9f1;
+}
+
+.only-right-rounded {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}

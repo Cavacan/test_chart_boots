@@ -71,3 +71,5 @@ gem "sorcery"
 gem 'chartkick'
 
 gem 'groupdate'
+
+gem 'sass-rails'

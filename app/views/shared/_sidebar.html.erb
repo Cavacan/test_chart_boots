@@ -1,33 +1,33 @@
-<div class="p-3">
-  <h5>メニュー</h5>
-  <div class="nav flex-column">
+<div class="pt-3 pr-3 pb-3 ml-0">
+  <div class="m-3"><h5>メニュー</h5></div>
+  <ul class="nav flex-column">
     <% if logged_in? %>
-      <li class="nav-item mt-1">
-        <%= link_to 'home', step_records_path, class: 'nav-link border' %>
+      <li class="nav-item">
+        <%= link_to 'home', step_records_path, class: "only-right-rounded nav-link #{ 'active' if current_page?(step_records_path)}" %>
       </li>
-      <li class="nav-item mt-1">
-        <%= link_to 'edit', new_step_record_path, class: 'nav-link bg-primary-subtle' %>
+      
+      <li class="nav-item">
+        <%= link_to 'edit', edit_step_records_path, class: "only-right-rounded nav-link #{ 'active' if current_page?(edit_step_records_path)}" %>
       </li>
-      <hr>
-      <li class="nav-item mt-1">
-        <%= link_to 'page2', page2_path, class: 'nav-link border rounded' %>
+      
+      <li class="nav-item">
+        <%= link_to 'page2', page2_path, class: "only-right-rounded  nav-link #{ 'active' if current_page?(page2_path)}" %>
       </li>
-      <hr>
-      <li class="nav-item mt-1">
-        <%= link_to 'config', config_path, class: 'nav-link border rounded-3 bg-primary-subtle' %>
+      <li class="nav-item">
+        <%= link_to 'config', config_path, class: "only-right-rounded  nav-link #{ 'active' if current_page?(config_path)}" %>
       </li>
 
       <span class="border-end border-bottom border-primary mt-2"></span>
-      <div class="user mt-1">
+      <div class="user">
         <%= current_user.email %>
       </div>
-      <div class="logout mt-1">
+      <div class="logout mt-3">
         <%= button_to 'logout', logout_path, method: :delete, class: 'btn btn-dark' %>
       </div>
     <% else %>
-      <li class="nav-item mt-1">
+      <li class="nav-item">
         <%= link_to 'Login', login_path, class: 'nav-link' %>
       </li>
     <% end %>
-  </div>
+  </ul>
 </div>
